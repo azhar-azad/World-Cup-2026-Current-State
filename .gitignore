@@ -1,0 +1,16 @@
+node_modules/
+.turbo/
+dist/
+.next/
+out/
+coverage/
+*.log
+.env
+.env.local
+.DS_Store
+
+# Local SQLite database (generated at runtime / seeded)
+*.sqlite
+*.sqlite3
+*.db
+apps/web/data/*.sqlite

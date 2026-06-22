@@ -1,0 +1,1947 @@
+[
+  {
+    "id": "G1",
+    "matchNo": 1,
+    "stage": "group",
+    "group": "A",
+    "homeTeam": "MEX",
+    "awayTeam": "RSA",
+    "kickoff": "2026-06-11T19:00:00Z",
+    "venue": "Mexico City",
+    "status": "finished",
+    "homeScore": 2,
+    "awayScore": 0,
+    "goals": [
+      {
+        "team": "MEX",
+        "minute": 9
+      },
+      {
+        "team": "MEX",
+        "minute": 67
+      }
+    ]
+  },
+  {
+    "id": "G2",
+    "matchNo": 2,
+    "stage": "group",
+    "group": "A",
+    "homeTeam": "KOR",
+    "awayTeam": "CZE",
+    "kickoff": "2026-06-12T02:00:00Z",
+    "venue": "Guadalajara (Zapopan)",
+    "status": "finished",
+    "homeScore": 2,
+    "awayScore": 1,
+    "goals": [
+      {
+        "team": "KOR",
+        "minute": 67
+      },
+      {
+        "team": "KOR",
+        "minute": 80
+      },
+      {
+        "team": "CZE",
+        "minute": 59
+      }
+    ]
+  },
+  {
+    "id": "G3",
+    "matchNo": 3,
+    "stage": "group",
+    "group": "B",
+    "homeTeam": "CAN",
+    "awayTeam": "BIH",
+    "kickoff": "2026-06-12T19:00:00Z",
+    "venue": "Toronto",
+    "status": "finished",
+    "homeScore": 1,
+    "awayScore": 1,
+    "goals": [
+      {
+        "team": "CAN",
+        "minute": 78
+      },
+      {
+        "team": "BIH",
+        "minute": 21
+      }
+    ]
+  },
+  {
+    "id": "G4",
+    "matchNo": 4,
+    "stage": "group",
+    "group": "D",
+    "homeTeam": "USA",
+    "awayTeam": "PAR",
+    "kickoff": "2026-06-13T01:00:00Z",
+    "venue": "Los Angeles (Inglewood)",
+    "status": "finished",
+    "homeScore": 4,
+    "awayScore": 1,
+    "goals": [
+      {
+        "team": "USA",
+        "minute": 7
+      },
+      {
+        "team": "USA",
+        "minute": 31
+      },
+      {
+        "team": "USA",
+        "minute": 45
+      },
+      {
+        "team": "USA",
+        "minute": 90
+      },
+      {
+        "team": "PAR",
+        "minute": 73
+      }
+    ]
+  },
+  {
+    "id": "G5",
+    "matchNo": 5,
+    "stage": "group",
+    "group": "B",
+    "homeTeam": "QAT",
+    "awayTeam": "SUI",
+    "kickoff": "2026-06-13T19:00:00Z",
+    "venue": "San Francisco Bay Area (Santa Clara)",
+    "status": "finished",
+    "homeScore": 1,
+    "awayScore": 1,
+    "goals": [
+      {
+        "team": "QAT",
+        "minute": 90
+      },
+      {
+        "team": "SUI",
+        "minute": 17
+      }
+    ]
+  },
+  {
+    "id": "G6",
+    "matchNo": 6,
+    "stage": "group",
+    "group": "C",
+    "homeTeam": "BRA",
+    "awayTeam": "MAR",
+    "kickoff": "2026-06-13T22:00:00Z",
+    "venue": "New York/New Jersey (East Rutherford)",
+    "status": "finished",
+    "homeScore": 1,
+    "awayScore": 1,
+    "goals": [
+      {
+        "team": "BRA",
+        "minute": 32
+      },
+      {
+        "team": "MAR",
+        "minute": 21
+      }
+    ]
+  },
+  {
+    "id": "G7",
+    "matchNo": 7,
+    "stage": "group",
+    "group": "C",
+    "homeTeam": "HAI",
+    "awayTeam": "SCO",
+    "kickoff": "2026-06-14T01:00:00Z",
+    "venue": "Boston (Foxborough)",
+    "status": "finished",
+    "homeScore": 0,
+    "awayScore": 1,
+    "goals": [
+      {
+        "team": "SCO",
+        "minute": 28
+      }
+    ]
+  },
+  {
+    "id": "G8",
+    "matchNo": 8,
+    "stage": "group",
+    "group": "D",
+    "homeTeam": "AUS",
+    "awayTeam": "TUR",
+    "kickoff": "2026-06-14T04:00:00Z",
+    "venue": "Vancouver",
+    "status": "finished",
+    "homeScore": 2,
+    "awayScore": 0,
+    "goals": [
+      {
+        "team": "AUS",
+        "minute": 27
+      },
+      {
+        "team": "AUS",
+        "minute": 75
+      }
+    ]
+  },
+  {
+    "id": "G9",
+    "matchNo": 9,
+    "stage": "group",
+    "group": "E",
+    "homeTeam": "GER",
+    "awayTeam": "CUW",
+    "kickoff": "2026-06-14T17:00:00Z",
+    "venue": "Houston",
+    "status": "finished",
+    "homeScore": 7,
+    "awayScore": 1,
+    "goals": [
+      {
+        "team": "GER",
+        "minute": 6
+      },
+      {
+        "team": "GER",
+        "minute": 38
+      },
+      {
+        "team": "GER",
+        "minute": 45
+      },
+      {
+        "team": "GER",
+        "minute": 88
+      },
+      {
+        "team": "GER",
+        "minute": 47
+      },
+      {
+        "team": "GER",
+        "minute": 68
+      },
+      {
+        "team": "GER",
+        "minute": 78
+      },
+      {
+        "team": "CUW",
+        "minute": 21
+      }
+    ]
+  },
+  {
+    "id": "G10",
+    "matchNo": 10,
+    "stage": "group",
+    "group": "F",
+    "homeTeam": "NED",
+    "awayTeam": "JPN",
+    "kickoff": "2026-06-14T20:00:00Z",
+    "venue": "Dallas (Arlington)",
+    "status": "finished",
+    "homeScore": 2,
+    "awayScore": 2,
+    "goals": [
+      {
+        "team": "NED",
+        "minute": 51
+      },
+      {
+        "team": "NED",
+        "minute": 64
+      },
+      {
+        "team": "JPN",
+        "minute": 57
+      },
+      {
+        "team": "JPN",
+        "minute": 88
+      }
+    ]
+  },
+  {
+    "id": "G11",
+    "matchNo": 11,
+    "stage": "group",
+    "group": "E",
+    "homeTeam": "CIV",
+    "awayTeam": "ECU",
+    "kickoff": "2026-06-14T23:00:00Z",
+    "venue": "Philadelphia",
+    "status": "finished",
+    "homeScore": 1,
+    "awayScore": 0,
+    "goals": [
+      {
+        "team": "CIV",
+        "minute": 90
+      }
+    ]
+  },
+  {
+    "id": "G12",
+    "matchNo": 12,
+    "stage": "group",
+    "group": "F",
+    "homeTeam": "SWE",
+    "awayTeam": "TUN",
+    "kickoff": "2026-06-15T02:00:00Z",
+    "venue": "Monterrey (Guadalupe)",
+    "status": "finished",
+    "homeScore": 5,
+    "awayScore": 1,
+    "goals": [
+      {
+        "team": "SWE",
+        "minute": 7
+      },
+      {
+        "team": "SWE",
+        "minute": 30
+      },
+      {
+        "team": "SWE",
+        "minute": 59
+      },
+      {
+        "team": "SWE",
+        "minute": 84
+      },
+      {
+        "team": "SWE",
+        "minute": 90
+      },
+      {
+        "team": "TUN",
+        "minute": 43
+      }
+    ]
+  },
+  {
+    "id": "G13",
+    "matchNo": 13,
+    "stage": "group",
+    "group": "H",
+    "homeTeam": "ESP",
+    "awayTeam": "CPV",
+    "kickoff": "2026-06-15T16:00:00Z",
+    "venue": "Atlanta",
+    "status": "finished",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "G14",
+    "matchNo": 14,
+    "stage": "group",
+    "group": "G",
+    "homeTeam": "BEL",
+    "awayTeam": "EGY",
+    "kickoff": "2026-06-15T19:00:00Z",
+    "venue": "Seattle",
+    "status": "finished",
+    "homeScore": 1,
+    "awayScore": 1,
+    "goals": [
+      {
+        "team": "BEL",
+        "minute": 66
+      },
+      {
+        "team": "EGY",
+        "minute": 19
+      }
+    ]
+  },
+  {
+    "id": "G15",
+    "matchNo": 15,
+    "stage": "group",
+    "group": "H",
+    "homeTeam": "KSA",
+    "awayTeam": "URU",
+    "kickoff": "2026-06-15T22:00:00Z",
+    "venue": "Miami (Miami Gardens)",
+    "status": "finished",
+    "homeScore": 1,
+    "awayScore": 1,
+    "goals": [
+      {
+        "team": "KSA",
+        "minute": 41
+      },
+      {
+        "team": "URU",
+        "minute": 80
+      }
+    ]
+  },
+  {
+    "id": "G16",
+    "matchNo": 16,
+    "stage": "group",
+    "group": "G",
+    "homeTeam": "IRN",
+    "awayTeam": "NZL",
+    "kickoff": "2026-06-16T01:00:00Z",
+    "venue": "Los Angeles (Inglewood)",
+    "status": "finished",
+    "homeScore": 2,
+    "awayScore": 2,
+    "goals": [
+      {
+        "team": "IRN",
+        "minute": 32
+      },
+      {
+        "team": "IRN",
+        "minute": 64
+      },
+      {
+        "team": "NZL",
+        "minute": 7
+      },
+      {
+        "team": "NZL",
+        "minute": 54
+      }
+    ]
+  },
+  {
+    "id": "G17",
+    "matchNo": 17,
+    "stage": "group",
+    "group": "I",
+    "homeTeam": "FRA",
+    "awayTeam": "SEN",
+    "kickoff": "2026-06-16T19:00:00Z",
+    "venue": "New York/New Jersey (East Rutherford)",
+    "status": "finished",
+    "homeScore": 3,
+    "awayScore": 1,
+    "goals": [
+      {
+        "team": "FRA",
+        "minute": 66
+      },
+      {
+        "team": "FRA",
+        "minute": 82
+      },
+      {
+        "team": "FRA",
+        "minute": 90
+      },
+      {
+        "team": "SEN",
+        "minute": 90
+      }
+    ]
+  },
+  {
+    "id": "G18",
+    "matchNo": 18,
+    "stage": "group",
+    "group": "I",
+    "homeTeam": "IRQ",
+    "awayTeam": "NOR",
+    "kickoff": "2026-06-16T22:00:00Z",
+    "venue": "Boston (Foxborough)",
+    "status": "finished",
+    "homeScore": 1,
+    "awayScore": 4,
+    "goals": [
+      {
+        "team": "IRQ",
+        "minute": 39
+      },
+      {
+        "team": "NOR",
+        "minute": 29
+      },
+      {
+        "team": "NOR",
+        "minute": 43
+      },
+      {
+        "team": "NOR",
+        "minute": 76
+      },
+      {
+        "team": "NOR",
+        "minute": 90
+      }
+    ]
+  },
+  {
+    "id": "G19",
+    "matchNo": 19,
+    "stage": "group",
+    "group": "J",
+    "homeTeam": "ARG",
+    "awayTeam": "ALG",
+    "kickoff": "2026-06-17T01:00:00Z",
+    "venue": "Kansas City",
+    "status": "finished",
+    "homeScore": 3,
+    "awayScore": 0,
+    "goals": [
+      {
+        "team": "ARG",
+        "minute": 17
+      },
+      {
+        "team": "ARG",
+        "minute": 60
+      },
+      {
+        "team": "ARG",
+        "minute": 76
+      }
+    ]
+  },
+  {
+    "id": "G20",
+    "matchNo": 20,
+    "stage": "group",
+    "group": "J",
+    "homeTeam": "AUT",
+    "awayTeam": "JOR",
+    "kickoff": "2026-06-17T04:00:00Z",
+    "venue": "San Francisco Bay Area (Santa Clara)",
+    "status": "finished",
+    "homeScore": 3,
+    "awayScore": 1,
+    "goals": [
+      {
+        "team": "AUT",
+        "minute": 21
+      },
+      {
+        "team": "AUT",
+        "minute": 76
+      },
+      {
+        "team": "AUT",
+        "minute": 90
+      },
+      {
+        "team": "JOR",
+        "minute": 50
+      }
+    ]
+  },
+  {
+    "id": "G21",
+    "matchNo": 21,
+    "stage": "group",
+    "group": "K",
+    "homeTeam": "POR",
+    "awayTeam": "COD",
+    "kickoff": "2026-06-17T17:00:00Z",
+    "venue": "Houston",
+    "status": "finished",
+    "homeScore": 1,
+    "awayScore": 1,
+    "goals": [
+      {
+        "team": "POR",
+        "minute": 6
+      },
+      {
+        "team": "COD",
+        "minute": 45
+      }
+    ]
+  },
+  {
+    "id": "G22",
+    "matchNo": 22,
+    "stage": "group",
+    "group": "L",
+    "homeTeam": "ENG",
+    "awayTeam": "CRO",
+    "kickoff": "2026-06-17T20:00:00Z",
+    "venue": "Dallas (Arlington)",
+    "status": "finished",
+    "homeScore": 4,
+    "awayScore": 2,
+    "goals": [
+      {
+        "team": "ENG",
+        "minute": 12
+      },
+      {
+        "team": "ENG",
+        "minute": 42
+      },
+      {
+        "team": "ENG",
+        "minute": 47
+      },
+      {
+        "team": "ENG",
+        "minute": 85
+      },
+      {
+        "team": "CRO",
+        "minute": 36
+      },
+      {
+        "team": "CRO",
+        "minute": 45
+      }
+    ]
+  },
+  {
+    "id": "G23",
+    "matchNo": 23,
+    "stage": "group",
+    "group": "L",
+    "homeTeam": "GHA",
+    "awayTeam": "PAN",
+    "kickoff": "2026-06-17T23:00:00Z",
+    "venue": "Toronto",
+    "status": "finished",
+    "homeScore": 1,
+    "awayScore": 0,
+    "goals": [
+      {
+        "team": "GHA",
+        "minute": 90
+      }
+    ]
+  },
+  {
+    "id": "G24",
+    "matchNo": 24,
+    "stage": "group",
+    "group": "K",
+    "homeTeam": "UZB",
+    "awayTeam": "COL",
+    "kickoff": "2026-06-18T02:00:00Z",
+    "venue": "Mexico City",
+    "status": "finished",
+    "homeScore": 1,
+    "awayScore": 3,
+    "goals": [
+      {
+        "team": "UZB",
+        "minute": 60
+      },
+      {
+        "team": "COL",
+        "minute": 40
+      },
+      {
+        "team": "COL",
+        "minute": 65
+      },
+      {
+        "team": "COL",
+        "minute": 90
+      }
+    ]
+  },
+  {
+    "id": "G25",
+    "matchNo": 25,
+    "stage": "group",
+    "group": "A",
+    "homeTeam": "CZE",
+    "awayTeam": "RSA",
+    "kickoff": "2026-06-18T16:00:00Z",
+    "venue": "Atlanta",
+    "status": "finished",
+    "homeScore": 1,
+    "awayScore": 1,
+    "goals": [
+      {
+        "team": "CZE",
+        "minute": 6
+      },
+      {
+        "team": "RSA",
+        "minute": 83
+      }
+    ]
+  },
+  {
+    "id": "G26",
+    "matchNo": 26,
+    "stage": "group",
+    "group": "B",
+    "homeTeam": "SUI",
+    "awayTeam": "BIH",
+    "kickoff": "2026-06-18T19:00:00Z",
+    "venue": "Los Angeles (Inglewood)",
+    "status": "finished",
+    "homeScore": 4,
+    "awayScore": 1,
+    "goals": [
+      {
+        "team": "SUI",
+        "minute": 74
+      },
+      {
+        "team": "SUI",
+        "minute": 84
+      },
+      {
+        "team": "SUI",
+        "minute": 90
+      },
+      {
+        "team": "SUI",
+        "minute": 90
+      },
+      {
+        "team": "BIH",
+        "minute": 90
+      }
+    ]
+  },
+  {
+    "id": "G27",
+    "matchNo": 27,
+    "stage": "group",
+    "group": "B",
+    "homeTeam": "CAN",
+    "awayTeam": "QAT",
+    "kickoff": "2026-06-18T22:00:00Z",
+    "venue": "Vancouver",
+    "status": "finished",
+    "homeScore": 6,
+    "awayScore": 0,
+    "goals": [
+      {
+        "team": "CAN",
+        "minute": 16
+      },
+      {
+        "team": "CAN",
+        "minute": 29
+      },
+      {
+        "team": "CAN",
+        "minute": 45
+      },
+      {
+        "team": "CAN",
+        "minute": 64
+      },
+      {
+        "team": "CAN",
+        "minute": 75
+      },
+      {
+        "team": "CAN",
+        "minute": 90
+      }
+    ]
+  },
+  {
+    "id": "G28",
+    "matchNo": 28,
+    "stage": "group",
+    "group": "A",
+    "homeTeam": "MEX",
+    "awayTeam": "KOR",
+    "kickoff": "2026-06-19T01:00:00Z",
+    "venue": "Guadalajara (Zapopan)",
+    "status": "finished",
+    "homeScore": 1,
+    "awayScore": 0,
+    "goals": [
+      {
+        "team": "MEX",
+        "minute": 50
+      }
+    ]
+  },
+  {
+    "id": "G29",
+    "matchNo": 29,
+    "stage": "group",
+    "group": "D",
+    "homeTeam": "USA",
+    "awayTeam": "AUS",
+    "kickoff": "2026-06-19T19:00:00Z",
+    "venue": "Seattle",
+    "status": "finished",
+    "homeScore": 2,
+    "awayScore": 0,
+    "goals": [
+      {
+        "team": "USA",
+        "minute": 11
+      },
+      {
+        "team": "USA",
+        "minute": 43
+      }
+    ]
+  },
+  {
+    "id": "G30",
+    "matchNo": 30,
+    "stage": "group",
+    "group": "C",
+    "homeTeam": "SCO",
+    "awayTeam": "MAR",
+    "kickoff": "2026-06-19T22:00:00Z",
+    "venue": "Boston (Foxborough)",
+    "status": "finished",
+    "homeScore": 0,
+    "awayScore": 1,
+    "goals": [
+      {
+        "team": "MAR",
+        "minute": 2
+      }
+    ]
+  },
+  {
+    "id": "G31",
+    "matchNo": 31,
+    "stage": "group",
+    "group": "C",
+    "homeTeam": "BRA",
+    "awayTeam": "HAI",
+    "kickoff": "2026-06-20T00:30:00Z",
+    "venue": "Philadelphia",
+    "status": "finished",
+    "homeScore": 3,
+    "awayScore": 0,
+    "goals": [
+      {
+        "team": "BRA",
+        "minute": 23
+      },
+      {
+        "team": "BRA",
+        "minute": 36
+      },
+      {
+        "team": "BRA",
+        "minute": 45
+      }
+    ]
+  },
+  {
+    "id": "G32",
+    "matchNo": 32,
+    "stage": "group",
+    "group": "D",
+    "homeTeam": "TUR",
+    "awayTeam": "PAR",
+    "kickoff": "2026-06-20T03:00:00Z",
+    "venue": "San Francisco Bay Area (Santa Clara)",
+    "status": "finished",
+    "homeScore": 0,
+    "awayScore": 1,
+    "goals": [
+      {
+        "team": "PAR",
+        "minute": 2
+      }
+    ]
+  },
+  {
+    "id": "G33",
+    "matchNo": 33,
+    "stage": "group",
+    "group": "F",
+    "homeTeam": "NED",
+    "awayTeam": "SWE",
+    "kickoff": "2026-06-20T17:00:00Z",
+    "venue": "Houston",
+    "status": "finished",
+    "homeScore": 5,
+    "awayScore": 1,
+    "goals": [
+      {
+        "team": "NED",
+        "minute": 5
+      },
+      {
+        "team": "NED",
+        "minute": 17
+      },
+      {
+        "team": "NED",
+        "minute": 47
+      },
+      {
+        "team": "NED",
+        "minute": 54
+      },
+      {
+        "team": "NED",
+        "minute": 89
+      },
+      {
+        "team": "SWE",
+        "minute": 59
+      }
+    ]
+  },
+  {
+    "id": "G34",
+    "matchNo": 34,
+    "stage": "group",
+    "group": "E",
+    "homeTeam": "GER",
+    "awayTeam": "CIV",
+    "kickoff": "2026-06-20T20:00:00Z",
+    "venue": "Toronto",
+    "status": "finished",
+    "homeScore": 2,
+    "awayScore": 1,
+    "goals": [
+      {
+        "team": "GER",
+        "minute": 68
+      },
+      {
+        "team": "GER",
+        "minute": 90
+      },
+      {
+        "team": "CIV",
+        "minute": 30
+      }
+    ]
+  },
+  {
+    "id": "G35",
+    "matchNo": 35,
+    "stage": "group",
+    "group": "E",
+    "homeTeam": "ECU",
+    "awayTeam": "CUW",
+    "kickoff": "2026-06-21T00:00:00Z",
+    "venue": "Kansas City",
+    "status": "finished",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "G36",
+    "matchNo": 36,
+    "stage": "group",
+    "group": "F",
+    "homeTeam": "TUN",
+    "awayTeam": "JPN",
+    "kickoff": "2026-06-21T04:00:00Z",
+    "venue": "Monterrey (Guadalupe)",
+    "status": "finished",
+    "homeScore": 0,
+    "awayScore": 4,
+    "goals": [
+      {
+        "team": "JPN",
+        "minute": 4
+      },
+      {
+        "team": "JPN",
+        "minute": 31
+      },
+      {
+        "team": "JPN",
+        "minute": 69
+      },
+      {
+        "team": "JPN",
+        "minute": 83
+      }
+    ]
+  },
+  {
+    "id": "G37",
+    "matchNo": 37,
+    "stage": "group",
+    "group": "H",
+    "homeTeam": "ESP",
+    "awayTeam": "KSA",
+    "kickoff": "2026-06-21T16:00:00Z",
+    "venue": "Atlanta",
+    "status": "finished",
+    "homeScore": 4,
+    "awayScore": 0,
+    "goals": [
+      {
+        "team": "ESP",
+        "minute": 10
+      },
+      {
+        "team": "ESP",
+        "minute": 21
+      },
+      {
+        "team": "ESP",
+        "minute": 24
+      },
+      {
+        "team": "ESP",
+        "minute": 49
+      }
+    ]
+  },
+  {
+    "id": "G38",
+    "matchNo": 38,
+    "stage": "group",
+    "group": "G",
+    "homeTeam": "BEL",
+    "awayTeam": "IRN",
+    "kickoff": "2026-06-21T19:00:00Z",
+    "venue": "Los Angeles (Inglewood)",
+    "status": "finished",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "G39",
+    "matchNo": 39,
+    "stage": "group",
+    "group": "H",
+    "homeTeam": "URU",
+    "awayTeam": "CPV",
+    "kickoff": "2026-06-21T22:00:00Z",
+    "venue": "Miami (Miami Gardens)",
+    "status": "finished",
+    "homeScore": 2,
+    "awayScore": 2,
+    "goals": [
+      {
+        "team": "URU",
+        "minute": 44
+      },
+      {
+        "team": "URU",
+        "minute": 45
+      },
+      {
+        "team": "CPV",
+        "minute": 21
+      },
+      {
+        "team": "CPV",
+        "minute": 61
+      }
+    ]
+  },
+  {
+    "id": "G40",
+    "matchNo": 40,
+    "stage": "group",
+    "group": "G",
+    "homeTeam": "NZL",
+    "awayTeam": "EGY",
+    "kickoff": "2026-06-22T01:00:00Z",
+    "venue": "Vancouver",
+    "status": "finished",
+    "homeScore": 1,
+    "awayScore": 3,
+    "goals": [
+      {
+        "team": "NZL",
+        "minute": 15
+      },
+      {
+        "team": "EGY",
+        "minute": 58
+      },
+      {
+        "team": "EGY",
+        "minute": 67
+      },
+      {
+        "team": "EGY",
+        "minute": 82
+      }
+    ]
+  },
+  {
+    "id": "G41",
+    "matchNo": 41,
+    "stage": "group",
+    "group": "J",
+    "homeTeam": "ARG",
+    "awayTeam": "AUT",
+    "kickoff": "2026-06-22T17:00:00Z",
+    "venue": "Dallas (Arlington)",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "G42",
+    "matchNo": 42,
+    "stage": "group",
+    "group": "I",
+    "homeTeam": "FRA",
+    "awayTeam": "IRQ",
+    "kickoff": "2026-06-22T21:00:00Z",
+    "venue": "Philadelphia",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "G43",
+    "matchNo": 43,
+    "stage": "group",
+    "group": "I",
+    "homeTeam": "NOR",
+    "awayTeam": "SEN",
+    "kickoff": "2026-06-23T00:00:00Z",
+    "venue": "New York/New Jersey (East Rutherford)",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "G44",
+    "matchNo": 44,
+    "stage": "group",
+    "group": "J",
+    "homeTeam": "JOR",
+    "awayTeam": "ALG",
+    "kickoff": "2026-06-23T03:00:00Z",
+    "venue": "San Francisco Bay Area (Santa Clara)",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "G45",
+    "matchNo": 45,
+    "stage": "group",
+    "group": "K",
+    "homeTeam": "POR",
+    "awayTeam": "UZB",
+    "kickoff": "2026-06-23T17:00:00Z",
+    "venue": "Houston",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "G46",
+    "matchNo": 46,
+    "stage": "group",
+    "group": "L",
+    "homeTeam": "ENG",
+    "awayTeam": "GHA",
+    "kickoff": "2026-06-23T20:00:00Z",
+    "venue": "Boston (Foxborough)",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "G47",
+    "matchNo": 47,
+    "stage": "group",
+    "group": "L",
+    "homeTeam": "PAN",
+    "awayTeam": "CRO",
+    "kickoff": "2026-06-23T23:00:00Z",
+    "venue": "Toronto",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "G48",
+    "matchNo": 48,
+    "stage": "group",
+    "group": "K",
+    "homeTeam": "COL",
+    "awayTeam": "COD",
+    "kickoff": "2026-06-24T02:00:00Z",
+    "venue": "Guadalajara (Zapopan)",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "G49",
+    "matchNo": 49,
+    "stage": "group",
+    "group": "B",
+    "homeTeam": "SUI",
+    "awayTeam": "CAN",
+    "kickoff": "2026-06-24T19:00:00Z",
+    "venue": "Vancouver",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "G50",
+    "matchNo": 50,
+    "stage": "group",
+    "group": "B",
+    "homeTeam": "BIH",
+    "awayTeam": "QAT",
+    "kickoff": "2026-06-24T19:00:00Z",
+    "venue": "Seattle",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "G51",
+    "matchNo": 51,
+    "stage": "group",
+    "group": "C",
+    "homeTeam": "SCO",
+    "awayTeam": "BRA",
+    "kickoff": "2026-06-24T22:00:00Z",
+    "venue": "Miami (Miami Gardens)",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "G52",
+    "matchNo": 52,
+    "stage": "group",
+    "group": "C",
+    "homeTeam": "MAR",
+    "awayTeam": "HAI",
+    "kickoff": "2026-06-24T22:00:00Z",
+    "venue": "Atlanta",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "G53",
+    "matchNo": 53,
+    "stage": "group",
+    "group": "A",
+    "homeTeam": "CZE",
+    "awayTeam": "MEX",
+    "kickoff": "2026-06-25T01:00:00Z",
+    "venue": "Mexico City",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "G54",
+    "matchNo": 54,
+    "stage": "group",
+    "group": "A",
+    "homeTeam": "RSA",
+    "awayTeam": "KOR",
+    "kickoff": "2026-06-25T01:00:00Z",
+    "venue": "Monterrey (Guadalupe)",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "G55",
+    "matchNo": 55,
+    "stage": "group",
+    "group": "E",
+    "homeTeam": "CUW",
+    "awayTeam": "CIV",
+    "kickoff": "2026-06-25T20:00:00Z",
+    "venue": "Philadelphia",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "G56",
+    "matchNo": 56,
+    "stage": "group",
+    "group": "E",
+    "homeTeam": "ECU",
+    "awayTeam": "GER",
+    "kickoff": "2026-06-25T20:00:00Z",
+    "venue": "New York/New Jersey (East Rutherford)",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "G57",
+    "matchNo": 57,
+    "stage": "group",
+    "group": "F",
+    "homeTeam": "JPN",
+    "awayTeam": "SWE",
+    "kickoff": "2026-06-25T23:00:00Z",
+    "venue": "Dallas (Arlington)",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "G58",
+    "matchNo": 58,
+    "stage": "group",
+    "group": "F",
+    "homeTeam": "TUN",
+    "awayTeam": "NED",
+    "kickoff": "2026-06-25T23:00:00Z",
+    "venue": "Kansas City",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "G59",
+    "matchNo": 59,
+    "stage": "group",
+    "group": "D",
+    "homeTeam": "TUR",
+    "awayTeam": "USA",
+    "kickoff": "2026-06-26T02:00:00Z",
+    "venue": "Los Angeles (Inglewood)",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "G60",
+    "matchNo": 60,
+    "stage": "group",
+    "group": "D",
+    "homeTeam": "PAR",
+    "awayTeam": "AUS",
+    "kickoff": "2026-06-26T02:00:00Z",
+    "venue": "San Francisco Bay Area (Santa Clara)",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "G61",
+    "matchNo": 61,
+    "stage": "group",
+    "group": "I",
+    "homeTeam": "NOR",
+    "awayTeam": "FRA",
+    "kickoff": "2026-06-26T19:00:00Z",
+    "venue": "Boston (Foxborough)",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "G62",
+    "matchNo": 62,
+    "stage": "group",
+    "group": "I",
+    "homeTeam": "SEN",
+    "awayTeam": "IRQ",
+    "kickoff": "2026-06-26T19:00:00Z",
+    "venue": "Toronto",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "G63",
+    "matchNo": 63,
+    "stage": "group",
+    "group": "H",
+    "homeTeam": "CPV",
+    "awayTeam": "KSA",
+    "kickoff": "2026-06-27T00:00:00Z",
+    "venue": "Houston",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "G64",
+    "matchNo": 64,
+    "stage": "group",
+    "group": "H",
+    "homeTeam": "URU",
+    "awayTeam": "ESP",
+    "kickoff": "2026-06-27T00:00:00Z",
+    "venue": "Guadalajara (Zapopan)",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "G65",
+    "matchNo": 65,
+    "stage": "group",
+    "group": "G",
+    "homeTeam": "EGY",
+    "awayTeam": "IRN",
+    "kickoff": "2026-06-27T03:00:00Z",
+    "venue": "Seattle",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "G66",
+    "matchNo": 66,
+    "stage": "group",
+    "group": "G",
+    "homeTeam": "NZL",
+    "awayTeam": "BEL",
+    "kickoff": "2026-06-27T03:00:00Z",
+    "venue": "Vancouver",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "G67",
+    "matchNo": 67,
+    "stage": "group",
+    "group": "L",
+    "homeTeam": "PAN",
+    "awayTeam": "ENG",
+    "kickoff": "2026-06-27T21:00:00Z",
+    "venue": "New York/New Jersey (East Rutherford)",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "G68",
+    "matchNo": 68,
+    "stage": "group",
+    "group": "L",
+    "homeTeam": "CRO",
+    "awayTeam": "GHA",
+    "kickoff": "2026-06-27T21:00:00Z",
+    "venue": "Philadelphia",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "G69",
+    "matchNo": 69,
+    "stage": "group",
+    "group": "K",
+    "homeTeam": "COL",
+    "awayTeam": "POR",
+    "kickoff": "2026-06-27T23:30:00Z",
+    "venue": "Miami (Miami Gardens)",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "G70",
+    "matchNo": 70,
+    "stage": "group",
+    "group": "K",
+    "homeTeam": "COD",
+    "awayTeam": "UZB",
+    "kickoff": "2026-06-27T23:30:00Z",
+    "venue": "Atlanta",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "G71",
+    "matchNo": 71,
+    "stage": "group",
+    "group": "J",
+    "homeTeam": "ALG",
+    "awayTeam": "AUT",
+    "kickoff": "2026-06-28T02:00:00Z",
+    "venue": "Kansas City",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "G72",
+    "matchNo": 72,
+    "stage": "group",
+    "group": "J",
+    "homeTeam": "JOR",
+    "awayTeam": "ARG",
+    "kickoff": "2026-06-28T02:00:00Z",
+    "venue": "Dallas (Arlington)",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "M73",
+    "matchNo": 73,
+    "stage": "R32",
+    "homeTeam": null,
+    "awayTeam": null,
+    "kickoff": "2026-06-28T19:00:00Z",
+    "venue": "Los Angeles (Inglewood)",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "M74",
+    "matchNo": 74,
+    "stage": "R32",
+    "homeTeam": null,
+    "awayTeam": null,
+    "kickoff": "2026-06-29T20:30:00Z",
+    "venue": "Boston (Foxborough)",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "M75",
+    "matchNo": 75,
+    "stage": "R32",
+    "homeTeam": null,
+    "awayTeam": null,
+    "kickoff": "2026-06-30T01:00:00Z",
+    "venue": "Monterrey (Guadalupe)",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "M76",
+    "matchNo": 76,
+    "stage": "R32",
+    "homeTeam": null,
+    "awayTeam": null,
+    "kickoff": "2026-06-29T17:00:00Z",
+    "venue": "Houston",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "M77",
+    "matchNo": 77,
+    "stage": "R32",
+    "homeTeam": null,
+    "awayTeam": null,
+    "kickoff": "2026-06-30T21:00:00Z",
+    "venue": "New York/New Jersey (East Rutherford)",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "M78",
+    "matchNo": 78,
+    "stage": "R32",
+    "homeTeam": null,
+    "awayTeam": null,
+    "kickoff": "2026-06-30T17:00:00Z",
+    "venue": "Dallas (Arlington)",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "M79",
+    "matchNo": 79,
+    "stage": "R32",
+    "homeTeam": null,
+    "awayTeam": null,
+    "kickoff": "2026-07-01T01:00:00Z",
+    "venue": "Mexico City",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "M80",
+    "matchNo": 80,
+    "stage": "R32",
+    "homeTeam": null,
+    "awayTeam": null,
+    "kickoff": "2026-07-01T16:00:00Z",
+    "venue": "Atlanta",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "M81",
+    "matchNo": 81,
+    "stage": "R32",
+    "homeTeam": null,
+    "awayTeam": null,
+    "kickoff": "2026-07-02T00:00:00Z",
+    "venue": "San Francisco Bay Area (Santa Clara)",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "M82",
+    "matchNo": 82,
+    "stage": "R32",
+    "homeTeam": null,
+    "awayTeam": null,
+    "kickoff": "2026-07-01T20:00:00Z",
+    "venue": "Seattle",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "M83",
+    "matchNo": 83,
+    "stage": "R32",
+    "homeTeam": null,
+    "awayTeam": null,
+    "kickoff": "2026-07-02T23:00:00Z",
+    "venue": "Toronto",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "M84",
+    "matchNo": 84,
+    "stage": "R32",
+    "homeTeam": null,
+    "awayTeam": null,
+    "kickoff": "2026-07-02T19:00:00Z",
+    "venue": "Los Angeles (Inglewood)",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "M85",
+    "matchNo": 85,
+    "stage": "R32",
+    "homeTeam": null,
+    "awayTeam": null,
+    "kickoff": "2026-07-03T03:00:00Z",
+    "venue": "Vancouver",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "M86",
+    "matchNo": 86,
+    "stage": "R32",
+    "homeTeam": null,
+    "awayTeam": null,
+    "kickoff": "2026-07-03T22:00:00Z",
+    "venue": "Miami (Miami Gardens)",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "M87",
+    "matchNo": 87,
+    "stage": "R32",
+    "homeTeam": null,
+    "awayTeam": null,
+    "kickoff": "2026-07-04T01:30:00Z",
+    "venue": "Kansas City",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "M88",
+    "matchNo": 88,
+    "stage": "R32",
+    "homeTeam": null,
+    "awayTeam": null,
+    "kickoff": "2026-07-03T18:00:00Z",
+    "venue": "Dallas (Arlington)",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "M89",
+    "matchNo": 89,
+    "stage": "R16",
+    "homeTeam": null,
+    "awayTeam": null,
+    "kickoff": "2026-07-04T21:00:00Z",
+    "venue": "Philadelphia",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "M90",
+    "matchNo": 90,
+    "stage": "R16",
+    "homeTeam": null,
+    "awayTeam": null,
+    "kickoff": "2026-07-04T17:00:00Z",
+    "venue": "Houston",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "M91",
+    "matchNo": 91,
+    "stage": "R16",
+    "homeTeam": null,
+    "awayTeam": null,
+    "kickoff": "2026-07-05T20:00:00Z",
+    "venue": "New York/New Jersey (East Rutherford)",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "M92",
+    "matchNo": 92,
+    "stage": "R16",
+    "homeTeam": null,
+    "awayTeam": null,
+    "kickoff": "2026-07-06T00:00:00Z",
+    "venue": "Mexico City",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "M93",
+    "matchNo": 93,
+    "stage": "R16",
+    "homeTeam": null,
+    "awayTeam": null,
+    "kickoff": "2026-07-06T19:00:00Z",
+    "venue": "Dallas (Arlington)",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "M94",
+    "matchNo": 94,
+    "stage": "R16",
+    "homeTeam": null,
+    "awayTeam": null,
+    "kickoff": "2026-07-07T00:00:00Z",
+    "venue": "Seattle",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "M95",
+    "matchNo": 95,
+    "stage": "R16",
+    "homeTeam": null,
+    "awayTeam": null,
+    "kickoff": "2026-07-07T16:00:00Z",
+    "venue": "Atlanta",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "M96",
+    "matchNo": 96,
+    "stage": "R16",
+    "homeTeam": null,
+    "awayTeam": null,
+    "kickoff": "2026-07-07T20:00:00Z",
+    "venue": "Vancouver",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "M97",
+    "matchNo": 97,
+    "stage": "QF",
+    "homeTeam": null,
+    "awayTeam": null,
+    "kickoff": "2026-07-09T20:00:00Z",
+    "venue": "Boston (Foxborough)",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "M98",
+    "matchNo": 98,
+    "stage": "QF",
+    "homeTeam": null,
+    "awayTeam": null,
+    "kickoff": "2026-07-10T19:00:00Z",
+    "venue": "Los Angeles (Inglewood)",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "M99",
+    "matchNo": 99,
+    "stage": "QF",
+    "homeTeam": null,
+    "awayTeam": null,
+    "kickoff": "2026-07-11T21:00:00Z",
+    "venue": "Miami (Miami Gardens)",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "M100",
+    "matchNo": 100,
+    "stage": "QF",
+    "homeTeam": null,
+    "awayTeam": null,
+    "kickoff": "2026-07-12T01:00:00Z",
+    "venue": "Kansas City",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "M101",
+    "matchNo": 101,
+    "stage": "SF",
+    "homeTeam": null,
+    "awayTeam": null,
+    "kickoff": "2026-07-14T19:00:00Z",
+    "venue": "Dallas (Arlington)",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "M102",
+    "matchNo": 102,
+    "stage": "SF",
+    "homeTeam": null,
+    "awayTeam": null,
+    "kickoff": "2026-07-15T19:00:00Z",
+    "venue": "Atlanta",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "M103",
+    "matchNo": 103,
+    "stage": "third",
+    "homeTeam": null,
+    "awayTeam": null,
+    "kickoff": "2026-07-18T21:00:00Z",
+    "venue": "Miami (Miami Gardens)",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  },
+  {
+    "id": "M104",
+    "matchNo": 104,
+    "stage": "final",
+    "homeTeam": null,
+    "awayTeam": null,
+    "kickoff": "2026-07-19T19:00:00Z",
+    "venue": "New York/New Jersey (East Rutherford)",
+    "status": "scheduled",
+    "homeScore": 0,
+    "awayScore": 0,
+    "goals": []
+  }
+]
