@@ -17,6 +17,9 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
 
 export function LiveDashboard({ initial }: { initial: AppData }) {
   const { data, connected } = useLiveData(initial);
+  const qualifyingThirds = new Set(
+    data.thirdPlace.filter((r) => r.position <= 8).map((r) => r.teamId),
+  );
 
   return (
     <main className="max-w-7xl mx-auto px-4 py-6">
@@ -51,7 +54,7 @@ export function LiveDashboard({ initial }: { initial: AppData }) {
       <SectionHeading>Groups</SectionHeading>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         {data.groups.map((g) => (
-          <GroupTable key={g.group} ranking={g} />
+          <GroupTable key={g.group} ranking={g} qualifyingThirds={qualifyingThirds} />
         ))}
       </div>
 

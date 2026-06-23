@@ -4,17 +4,23 @@ import type { GroupRanking } from "@wc26/core";
 import { teamsById } from "@wc26/data";
 import { Flag } from "./TeamLabel";
 
-function rowClass(position: number): string {
+function rowClass(position: number, isQualifyingThird: boolean): string {
   if (position <= 2)
     return "border-l-2 border-emerald-500 bg-emerald-500/[0.06]";
-  if (position === 3)
+  if (position === 3 && isQualifyingThird)
     return "border-l-2 border-amber-400 bg-amber-400/[0.06]";
   return "border-l-2 border-transparent";
 }
 
 const NUM = "px-2 py-1.5 text-right tabular-nums";
 
-export function GroupTable({ ranking }: { ranking: GroupRanking }) {
+export function GroupTable({
+  ranking,
+  qualifyingThirds,
+}: {
+  ranking: GroupRanking;
+  qualifyingThirds: Set<string>;
+}) {
   return (
     <div className="rounded-lg border border-white/10 bg-neutral-900/60 overflow-hidden">
       <div className="flex items-center justify-between px-3 py-2 border-b border-white/10">
@@ -46,7 +52,7 @@ export function GroupTable({ ranking }: { ranking: GroupRanking }) {
             return (
               <tr
                 key={r.teamId}
-                className={`last:border-0 ${rowClass(r.position)} ${
+                className={`last:border-0 ${rowClass(r.position, qualifyingThirds.has(r.teamId))} ${
                   r.position === 2
                     ? "border-b border-white/20"
                     : "border-b border-white/5"
@@ -89,10 +95,14 @@ export function GroupTable({ ranking }: { ranking: GroupRanking }) {
           <span className="h-2 w-0.5 rounded-full bg-emerald-500 inline-block" />
           Advances
         </span>
-        <span className="flex items-center gap-1.5">
-          <span className="h-2 w-0.5 rounded-full bg-amber-400 inline-block" />
-          Best 3rd
-        </span>
+        {ranking.rows.some(
+          (r) => r.position === 3 && qualifyingThirds.has(r.teamId),
+        ) && (
+          <span className="flex items-center gap-1.5">
+            <span className="h-2 w-0.5 rounded-full bg-amber-400 inline-block" />
+            Best 3rd
+          </span>
+        )}
       </div>
     </div>
   );
