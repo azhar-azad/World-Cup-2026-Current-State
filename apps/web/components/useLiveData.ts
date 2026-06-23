@@ -3,10 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 import type { AppData } from "@/lib/appData";
 
+const POLL_INTERVAL_MS = 3000;
+
 /**
- * Holds the live AppData. Seeds from the server-rendered `initial` snapshot and
- * then replaces it whenever the SSE stream pushes a newer version. Falls back to
- * a one-off fetch if EventSource isn't available.
+ * Keeps AppData fresh by polling /api/snapshot every 3 seconds.
+ * Seeds from the server-rendered `initial` snapshot; the `apply` function lets
+ * callers immediately apply a PATCH response without waiting for the next poll.
  */
 export function useLiveData(initial: AppData): {
   data: AppData;
@@ -25,17 +27,31 @@ export function useLiveData(initial: AppData): {
   };
 
   useEffect(() => {
-    const es = new EventSource("/api/stream");
-    es.onopen = () => setConnected(true);
-    es.onmessage = (e) => {
+    let cancelled = false;
+    let timerId: ReturnType<typeof setTimeout>;
+
+    const poll = async () => {
       try {
-        apply(JSON.parse(e.data) as AppData);
+        const res = await fetch("/api/snapshot");
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const next = (await res.json()) as AppData;
+        if (!cancelled) {
+          apply(next);
+          setConnected(true);
+        }
       } catch {
-        /* ignore malformed frame */
+        if (!cancelled) setConnected(false);
+      }
+      if (!cancelled) {
+        timerId = setTimeout(poll, POLL_INTERVAL_MS);
       }
     };
-    es.onerror = () => setConnected(false);
-    return () => es.close();
+
+    poll();
+    return () => {
+      cancelled = true;
+      clearTimeout(timerId);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

@@ -3,7 +3,7 @@ import { store } from "@/lib/store";
 
 export const dynamic = "force-dynamic";
 
-export function POST() {
-  store.reset();
-  return Response.json(getAppData());
+export async function POST() {
+  await store.reset();
+  return Response.json(await getAppData());
 }

@@ -16,9 +16,9 @@ export async function PATCH(
     return Response.json({ error: "Invalid JSON body" }, { status: 400 });
   }
   try {
-    store.update(Number(matchNo), body);
+    await store.update(Number(matchNo), body);
   } catch (e) {
     return Response.json({ error: String(e) }, { status: 400 });
   }
-  return Response.json(getAppData());
+  return Response.json(await getAppData());
 }

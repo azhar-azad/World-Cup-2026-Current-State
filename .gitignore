@@ -9,6 +9,9 @@ coverage/
 .env.local
 .DS_Store
 
+# Runtime state (seeded from @wc26/data on first run; not source-controlled)
+apps/web/data/state.json
+
 # Local SQLite database (generated at runtime / seeded)
 *.sqlite
 *.sqlite3

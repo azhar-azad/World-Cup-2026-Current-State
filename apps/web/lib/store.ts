@@ -2,14 +2,9 @@ import fs from "node:fs";
 import path from "node:path";
 import type { Goal, Match, MatchStatus } from "@wc26/core";
 import { schedule } from "@wc26/data";
+import { Redis } from "@upstash/redis";
 
-/**
- * Tiny JSON-file match store. Single-user, ~104 records, so a file is plenty —
- * and it avoids native build tools. All mutation goes through `update`, which
- * persists and notifies subscribers (used by the SSE stream). The store sits
- * behind this small surface so it could be swapped for SQLite later without
- * touching the routes.
- */
+const KV_KEY = "wc26:state";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 const FILE = path.join(DATA_DIR, "state.json");
@@ -33,7 +28,102 @@ interface PersistedState {
 
 type Listener = () => void;
 
-class MatchStore {
+function seedState(): PersistedState {
+  return { version: 1, matches: structuredClone(schedule) as Match[] };
+}
+
+function applyUpdate(match: Match, u: MatchUpdate): void {
+  if (u.status !== undefined) match.status = u.status;
+  if (typeof u.homeScore === "number") {
+    match.homeScore = Math.max(0, Math.trunc(u.homeScore));
+  }
+  if (typeof u.awayScore === "number") {
+    match.awayScore = Math.max(0, Math.trunc(u.awayScore));
+  }
+  if (u.winnerTeam !== undefined) match.winnerTeam = u.winnerTeam;
+
+  if (u.addGoal) {
+    const { side, minute } = u.addGoal;
+    const team = (side === "home" ? match.homeTeam : match.awayTeam) ?? side;
+    const goal: Goal = { id: crypto.randomUUID(), team, minute };
+    match.goals.push(goal);
+    if (side === "home") match.homeScore += 1;
+    else match.awayScore += 1;
+  }
+
+  if (u.removeGoalId) {
+    const idx = match.goals.findIndex((g) => g.id === u.removeGoalId);
+    if (idx >= 0) {
+      const [removed] = match.goals.splice(idx, 1);
+      const isHome = removed!.team === match.homeTeam || removed!.team === "home";
+      if (isHome) match.homeScore = Math.max(0, match.homeScore - 1);
+      else match.awayScore = Math.max(0, match.awayScore - 1);
+    }
+  }
+}
+
+// ─── KV-backed store (Vercel production) ─────────────────────────────────────
+// Uses @upstash/redis with the env vars Vercel KV auto-injects:
+//   KV_REST_API_URL, KV_REST_API_TOKEN
+// KVMatchStore is only instantiated when KV_REST_API_URL is present (see
+// createStore below), so the Redis client is always constructed with real values.
+
+class KVMatchStore {
+  private readonly redis: Redis;
+  private listeners = new Set<Listener>();
+
+  constructor() {
+    this.redis = new Redis({
+      url: process.env.KV_REST_API_URL!,
+      token: process.env.KV_REST_API_TOKEN!,
+    });
+  }
+
+  subscribe(listener: Listener): () => void {
+    this.listeners.add(listener);
+    return () => this.listeners.delete(listener);
+  }
+
+  private notify(): void {
+    for (const l of this.listeners) l();
+  }
+
+  private async readState(): Promise<PersistedState> {
+    const state = await this.redis.get<PersistedState>(KV_KEY);
+    if (state && Array.isArray(state.matches) && state.matches.length > 0) {
+      return state;
+    }
+    const fresh = seedState();
+    await this.redis.set(KV_KEY, fresh);
+    return fresh;
+  }
+
+  async getState(): Promise<PersistedState> {
+    return this.readState();
+  }
+
+  async update(matchNo: number, u: MatchUpdate): Promise<Match> {
+    const state = await this.readState();
+    const match = state.matches.find((m) => m.matchNo === matchNo);
+    if (!match) throw new Error(`Unknown match ${matchNo}`);
+    applyUpdate(match, u);
+    state.version += 1;
+    await this.redis.set(KV_KEY, state);
+    this.notify();
+    return match;
+  }
+
+  async reset(): Promise<void> {
+    const current = await this.readState();
+    const fresh = { ...seedState(), version: current.version + 1 };
+    await this.redis.set(KV_KEY, fresh);
+    this.notify();
+  }
+}
+
+// ─── File-backed store (local dev — no KV env vars) ──────────────────────────
+
+class FileMatchStore {
   private state: PersistedState;
   private listeners = new Set<Listener>();
 
@@ -51,10 +141,7 @@ class MatchStore {
     } catch {
       // no file yet — fall through to seeding
     }
-    const seeded: PersistedState = {
-      version: 1,
-      matches: structuredClone(schedule) as Match[],
-    };
+    const seeded = seedState();
     this.persist(seeded);
     return seeded;
   }
@@ -73,69 +160,39 @@ class MatchStore {
     for (const l of this.listeners) l();
   }
 
-  get version(): number {
-    return this.state.version;
+  async getState(): Promise<PersistedState> {
+    return { version: this.state.version, matches: this.state.matches };
   }
 
-  getMatches(): Match[] {
-    return this.state.matches;
-  }
-
-  getMatch(matchNo: number): Match | undefined {
-    return this.state.matches.find((m) => m.matchNo === matchNo);
-  }
-
-  update(matchNo: number, u: MatchUpdate): Match {
-    const match = this.getMatch(matchNo);
+  async update(matchNo: number, u: MatchUpdate): Promise<Match> {
+    const match = this.state.matches.find((m) => m.matchNo === matchNo);
     if (!match) throw new Error(`Unknown match ${matchNo}`);
-
-    if (u.status !== undefined) match.status = u.status;
-    if (typeof u.homeScore === "number") {
-      match.homeScore = Math.max(0, Math.trunc(u.homeScore));
-    }
-    if (typeof u.awayScore === "number") {
-      match.awayScore = Math.max(0, Math.trunc(u.awayScore));
-    }
-    if (u.winnerTeam !== undefined) match.winnerTeam = u.winnerTeam;
-
-    if (u.addGoal) {
-      const { side, minute } = u.addGoal;
-      const team =
-        (side === "home" ? match.homeTeam : match.awayTeam) ?? side;
-      const goal: Goal = { id: crypto.randomUUID(), team, minute };
-      match.goals.push(goal);
-      if (side === "home") match.homeScore += 1;
-      else match.awayScore += 1;
-    }
-
-    if (u.removeGoalId) {
-      const idx = match.goals.findIndex((g) => g.id === u.removeGoalId);
-      if (idx >= 0) {
-        const [removed] = match.goals.splice(idx, 1);
-        const isHome = removed!.team === match.homeTeam || removed!.team === "home";
-        if (isHome) match.homeScore = Math.max(0, match.homeScore - 1);
-        else match.awayScore = Math.max(0, match.awayScore - 1);
-      }
-    }
-
+    applyUpdate(match, u);
     this.state.version += 1;
     this.persist(this.state);
     this.notify();
     return match;
   }
 
-  /** Re-seed from the static schedule (discards all entered results). */
-  reset(): void {
-    this.state = {
-      version: this.state.version + 1,
-      matches: structuredClone(schedule) as Match[],
-    };
+  async reset(): Promise<void> {
+    this.state = { ...seedState(), version: this.state.version + 1 };
     this.persist(this.state);
     this.notify();
   }
 }
 
-// Survive Next.js dev HMR by caching the singleton on globalThis.
-const globalRef = globalThis as unknown as { __wc26Store?: MatchStore };
-export const store: MatchStore = globalRef.__wc26Store ?? new MatchStore();
+// ─── Singleton ────────────────────────────────────────────────────────────────
+// Cached on globalThis so it survives Next.js dev HMR re-evaluation.
+// In KV mode, state lives in Redis so the in-process singleton is stateless.
+
+type Store = KVMatchStore | FileMatchStore;
+
+const globalRef = globalThis as unknown as { __wc26Store?: Store };
+
+function createStore(): Store {
+  if (process.env.KV_REST_API_URL) return new KVMatchStore();
+  return new FileMatchStore();
+}
+
+export const store: Store = globalRef.__wc26Store ?? createStore();
 if (!globalRef.__wc26Store) globalRef.__wc26Store = store;

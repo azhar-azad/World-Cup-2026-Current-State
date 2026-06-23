@@ -18,8 +18,8 @@ export interface AppData {
   thirdPlace: RankedThird[];
 }
 
-export function getAppData(): AppData {
-  const matches = store.getMatches();
+export async function getAppData(): Promise<AppData> {
+  const { version, matches } = await store.getState();
   const snapshot = buildSnapshot({
     groupTeams,
     bracketTemplate,
@@ -30,7 +30,7 @@ export function getAppData(): AppData {
     includeLive: true,
   });
   return {
-    version: store.version,
+    version,
     matches,
     groups: snapshot.groups,
     bracket: snapshot.bracket,
