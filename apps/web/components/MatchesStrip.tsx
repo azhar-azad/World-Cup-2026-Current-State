@@ -60,33 +60,41 @@ function MatchCard({
       ? `Group ${match.group}`
       : STAGE_LABEL[match.stage] ?? match.stage;
 
-  let center: React.ReactNode;
-  if (match.status === "scheduled") {
-    center = (
-      <span className="text-[11px] text-neutral-400 whitespace-nowrap">
-        {fmtKickoff(match.kickoff)}
-      </span>
-    );
-  } else {
-    center = (
+  const isLive = match.status === "live";
+
+  const center: React.ReactNode =
+    match.status === "scheduled" ? (
+      <span className="text-xs text-neutral-400 whitespace-nowrap">vs</span>
+    ) : (
       <span className="font-semibold tabular-nums whitespace-nowrap">
-        {match.homeScore}<span className="text-neutral-500"> : </span>{match.awayScore}
+        {match.homeScore}
+        <span className="text-neutral-500"> : </span>
+        {match.awayScore}
       </span>
     );
-  }
 
   return (
-    <div className="rounded-md border border-white/10 bg-neutral-900/60 px-3 py-2">
+    <div
+      className={`rounded-md border px-3 py-2 ${
+        isLive
+          ? "border-red-500/60 bg-red-950/20 shadow-[inset_2px_0_0_0_rgb(239,68,68)]"
+          : "border-white/10 bg-neutral-900/60"
+      }`}
+    >
       <div className="flex items-center justify-between mb-1">
         <span className="text-[10px] uppercase tracking-wide text-neutral-500">
           {tag}
         </span>
-        {match.status === "live" && (
+        {isLive ? (
           <span className="text-[10px] font-semibold text-red-400 flex items-center gap-1">
             <span className="h-1.5 w-1.5 rounded-full bg-red-500 animate-pulse" />
             LIVE
           </span>
-        )}
+        ) : match.status === "scheduled" ? (
+          <span className="text-[10px] text-neutral-400">
+            {fmtKickoff(match.kickoff)}
+          </span>
+        ) : null}
       </div>
       <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-2 text-sm">
         <SideView side={home} align="right" />
