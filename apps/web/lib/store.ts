@@ -63,17 +63,19 @@ function applyUpdate(match: Match, u: MatchUpdate): void {
 }
 
 // ─── KV-backed store (Vercel production) ─────────────────────────────────────
-// Uses @upstash/redis with the env vars the Vercel × Upstash integration injects:
-//   UPSTASH_REDIS_REST_URL, UPSTASH_REDIS_REST_TOKEN
-// Redis.fromEnv() reads those automatically. KVMatchStore is only instantiated
-// when UPSTASH_REDIS_REST_URL is present (see createStore below).
+// Uses @upstash/redis with the env vars Vercel's Upstash marketplace integration
+// injects: KV_REST_API_URL, KV_REST_API_TOKEN.
+// KVMatchStore is only instantiated when KV_REST_API_URL is present (see createStore).
 
 class KVMatchStore {
   private readonly redis: Redis;
   private listeners = new Set<Listener>();
 
   constructor() {
-    this.redis = Redis.fromEnv();
+    this.redis = new Redis({
+      url: process.env.KV_REST_API_URL!,
+      token: process.env.KV_REST_API_TOKEN!,
+    });
   }
 
   subscribe(listener: Listener): () => void {
@@ -187,7 +189,7 @@ type Store = KVMatchStore | FileMatchStore;
 const globalRef = globalThis as unknown as { __wc26Store?: Store };
 
 function createStore(): Store {
-  if (process.env.UPSTASH_REDIS_REST_URL) return new KVMatchStore();
+  if (process.env.KV_REST_API_URL) return new KVMatchStore();
   return new FileMatchStore();
 }
 
