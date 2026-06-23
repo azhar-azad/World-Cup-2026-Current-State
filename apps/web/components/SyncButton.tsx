@@ -27,7 +27,14 @@ export function SyncButton() {
 
   useEffect(() => {
     if (resetAt === null && syncedAt === null) return;
-    const id = setInterval(() => setNow(Date.now()), 1000);
+    const id = setInterval(() => {
+      const current = Date.now();
+      setNow(current);
+      if (resetAt !== null && current >= resetAt) {
+        setRemaining(SYNC_MAX_PER_WINDOW);
+        setResetAt(null);
+      }
+    }, 1000);
     return () => clearInterval(id);
   }, [resetAt, syncedAt]);
 
