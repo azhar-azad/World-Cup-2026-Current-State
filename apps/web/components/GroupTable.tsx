@@ -4,11 +4,11 @@ import type { GroupRanking } from "@wc26/core";
 import { teamsById } from "@wc26/data";
 import { Flag } from "./TeamLabel";
 
-// Left accent by qualification status: top 2 advance directly; 3rd may advance
-// as a best third-placed team; 4th is eliminated.
-function accent(position: number): string {
-  if (position <= 2) return "border-l-2 border-emerald-500";
-  if (position === 3) return "border-l-2 border-amber-500";
+function rowClass(position: number): string {
+  if (position <= 2)
+    return "border-l-2 border-emerald-500 bg-emerald-500/[0.06]";
+  if (position === 3)
+    return "border-l-2 border-amber-400 bg-amber-400/[0.06]";
   return "border-l-2 border-transparent";
 }
 
@@ -46,7 +46,11 @@ export function GroupTable({ ranking }: { ranking: GroupRanking }) {
             return (
               <tr
                 key={r.teamId}
-                className={`border-b border-white/5 last:border-0 ${accent(r.position)}`}
+                className={`last:border-0 ${rowClass(r.position)} ${
+                  r.position === 2
+                    ? "border-b border-white/20"
+                    : "border-b border-white/5"
+                }`}
               >
                 <td className="px-2 py-1.5 text-neutral-500">{r.position}</td>
                 <td className="px-2 py-1.5">
@@ -80,6 +84,16 @@ export function GroupTable({ ranking }: { ranking: GroupRanking }) {
           })}
         </tbody>
       </table>
+      <div className="flex items-center gap-4 px-3 py-1.5 border-t border-white/5 text-[10px] text-neutral-500">
+        <span className="flex items-center gap-1.5">
+          <span className="h-2 w-0.5 rounded-full bg-emerald-500 inline-block" />
+          Advances
+        </span>
+        <span className="flex items-center gap-1.5">
+          <span className="h-2 w-0.5 rounded-full bg-amber-400 inline-block" />
+          Best 3rd
+        </span>
+      </div>
     </div>
   );
 }
