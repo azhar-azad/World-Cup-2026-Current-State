@@ -6,7 +6,7 @@ import {
   fdTlaToId,
   fdStatusToInternal,
 } from "@/lib/footballData";
-import { SYNC_SYNC_MAX_PER_WINDOW, SYNC_SYNC_WINDOW_SECONDS } from "@/lib/syncConstants";
+import { SYNC_MAX_PER_WINDOW, SYNC_WINDOW_SECONDS } from "@/lib/syncConstants";
 
 const RATE_LIMIT_KEY = "wc26:sync:window";
 
