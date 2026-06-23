@@ -7,6 +7,7 @@ import { GroupTable } from "./GroupTable";
 import { MatchesStrip } from "./MatchesStrip";
 import { ThirdPlaceTable } from "./ThirdPlaceTable";
 import { useLiveData } from "./useLiveData";
+import { SyncButton } from "./SyncButton";
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
@@ -37,6 +38,7 @@ export function LiveDashboard({ initial }: { initial: AppData }) {
             />
             {connected ? "Live" : "Offline"}
           </span>
+          <SyncButton />
           <Link
             href="/admin"
             className="text-sm rounded-md border border-white/15 px-3 py-1.5 hover:bg-white/5"
