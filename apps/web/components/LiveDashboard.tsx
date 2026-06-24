@@ -59,7 +59,7 @@ export function LiveDashboard({ initial }: { initial: AppData }) {
       </div>
 
       <SectionHeading>Matches</SectionHeading>
-      <MatchesStrip matches={data.matches} bracket={data.bracket} />
+      <MatchesStrip matches={data.matches} bracket={data.bracket} stakes={data.stakes} />
 
       <SectionHeading>Third-placed teams</SectionHeading>
       <ThirdPlaceTable rows={data.thirdPlace} />

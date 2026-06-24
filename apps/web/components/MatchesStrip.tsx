@@ -2,8 +2,32 @@
 
 import type { BracketMatch, Match } from "@wc26/core";
 import { teamsById } from "@wc26/data";
+import type { MatchStake, TeamStake } from "@/lib/stakes";
 import { Flag } from "./TeamLabel";
 import { STAGE_LABEL, fmtKickoff } from "./format";
+
+function stakeLabel(s: TeamStake): { text: string; color: string } | null {
+  if (s.alreadyClinched) return { text: "Already through", color: "text-emerald-400" };
+  if (s.alreadyEliminated) return { text: "Cannot advance", color: "text-red-400" };
+  if (s.clinchesWithDraw) return { text: "Through with a draw", color: "text-emerald-400" };
+  if (s.clinchesWithWin && s.eliminatedIfLose) return { text: "Must win", color: "text-amber-400" };
+  if (s.clinchesWithWin) return { text: "Through with a win", color: "text-emerald-400" };
+  if (s.eliminatedIfLose && s.couldAdvanceWithDraw) return { text: "Must avoid defeat", color: "text-amber-400" };
+  if (s.eliminatedIfLose) return { text: "Need a win + results", color: "text-amber-400" };
+  if (s.couldAdvanceWithWin) return { text: "In contention", color: "text-neutral-400" };
+  return null;
+}
+
+function StakeLine({ stake, name }: { stake: TeamStake; name: string }) {
+  const label = stakeLabel(stake);
+  if (!label) return null;
+  return (
+    <div className="flex items-baseline gap-1 text-[10px] leading-tight">
+      <span className="text-neutral-500 shrink-0 truncate max-w-[60px]">{name}:</span>
+      <span className={label.color}>{label.text}</span>
+    </div>
+  );
+}
 
 interface Side {
   teamId: string | null;
@@ -49,9 +73,11 @@ function SideView({ side, align }: { side: Side; align: "left" | "right" }) {
 function MatchCard({
   match,
   bracketByNo,
+  stake,
 }: {
   match: Match;
   bracketByNo: Map<number, BracketMatch>;
+  stake?: MatchStake;
 }) {
   const home = resolveSide(match, "home", bracketByNo);
   const away = resolveSide(match, "away", bracketByNo);
@@ -101,6 +127,18 @@ function MatchCard({
         <div className="px-2">{center}</div>
         <SideView side={away} align="left" />
       </div>
+      {stake && match.stage === "group" && (
+        <div className="mt-1.5 pt-1.5 border-t border-white/5 flex flex-col gap-0.5">
+          <StakeLine
+            stake={stake.homeStake}
+            name={home.teamId ? (teamsById.get(home.teamId)?.name ?? home.teamId) : home.label}
+          />
+          <StakeLine
+            stake={stake.awayStake}
+            name={away.teamId ? (teamsById.get(away.teamId)?.name ?? away.teamId) : away.label}
+          />
+        </div>
+      )}
     </div>
   );
 }
@@ -108,11 +146,14 @@ function MatchCard({
 export function MatchesStrip({
   matches,
   bracket,
+  stakes = [],
 }: {
   matches: Match[];
   bracket: BracketMatch[];
+  stakes?: MatchStake[];
 }) {
   const bracketByNo = new Map(bracket.map((b) => [b.matchNo, b]));
+  const stakeByMatchId = new Map(stakes.map((s) => [s.matchId, s]));
 
   const live = matches.filter((m) => m.status === "live");
   const upcoming = matches
@@ -129,7 +170,12 @@ export function MatchesStrip({
       <Column title={`Upcoming${live.length ? ` · ${live.length} live` : ""}`}>
         {upcomingList.length === 0 && <Empty>No upcoming matches</Empty>}
         {upcomingList.map((m) => (
-          <MatchCard key={m.id} match={m} bracketByNo={bracketByNo} />
+          <MatchCard
+            key={m.id}
+            match={m}
+            bracketByNo={bracketByNo}
+            stake={stakeByMatchId.get(m.id)}
+          />
         ))}
       </Column>
       <Column title="Past">
