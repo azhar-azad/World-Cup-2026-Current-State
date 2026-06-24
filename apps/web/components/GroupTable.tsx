@@ -36,12 +36,12 @@ export function GroupTable({
           <tr className="border-b border-white/5">
             <th className="px-2 py-1.5 text-left font-medium w-6">#</th>
             <th className="px-2 py-1.5 text-left font-medium">Team</th>
-            <th className={NUM.replace("text-right", "text-right") + " font-medium"}>MP</th>
-            <th className={NUM + " font-medium"}>W</th>
-            <th className={NUM + " font-medium"}>D</th>
-            <th className={NUM + " font-medium"}>L</th>
-            <th className={NUM + " font-medium"}>GF</th>
-            <th className={NUM + " font-medium"}>GA</th>
+            <th className={NUM + " font-medium"}>MP</th>
+            <th className={NUM + " font-medium hidden sm:table-cell"}>W</th>
+            <th className={NUM + " font-medium hidden sm:table-cell"}>D</th>
+            <th className={NUM + " font-medium hidden sm:table-cell"}>L</th>
+            <th className={NUM + " font-medium hidden sm:table-cell"}>GF</th>
+            <th className={NUM + " font-medium hidden sm:table-cell"}>GA</th>
             <th className={NUM + " font-medium"}>GD</th>
             <th className={NUM + " font-medium text-neutral-300"}>Pts</th>
           </tr>
@@ -74,11 +74,11 @@ export function GroupTable({
                   </span>
                 </td>
                 <td className={NUM}>{r.played}</td>
-                <td className={NUM}>{r.won}</td>
-                <td className={NUM}>{r.drawn}</td>
-                <td className={NUM}>{r.lost}</td>
-                <td className={NUM}>{r.goalsFor}</td>
-                <td className={NUM}>{r.goalsAgainst}</td>
+                <td className={NUM + " hidden sm:table-cell"}>{r.won}</td>
+                <td className={NUM + " hidden sm:table-cell"}>{r.drawn}</td>
+                <td className={NUM + " hidden sm:table-cell"}>{r.lost}</td>
+                <td className={NUM + " hidden sm:table-cell"}>{r.goalsFor}</td>
+                <td className={NUM + " hidden sm:table-cell"}>{r.goalsAgainst}</td>
                 <td className={NUM}>
                   {r.goalDifference > 0 ? `+${r.goalDifference}` : r.goalDifference}
                 </td>
