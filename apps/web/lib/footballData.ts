@@ -1,3 +1,8 @@
+export interface FDScore {
+  home: number | null;
+  away: number | null;
+}
+
 export interface FDMatch {
   id: number;
   utcDate: string;
@@ -5,9 +10,15 @@ export interface FDMatch {
   homeTeam: { id: number; tla: string; name: string; shortName: string };
   awayTeam: { id: number; tla: string; name: string; shortName: string };
   score: {
+    /** "HOME_TEAM" | "AWAY_TEAM" | "DRAW" | null */
     winner: string | null;
+    /** "REGULAR" | "EXTRA_TIME" | "PENALTY_SHOOTOUT" */
     duration: string;
-    fullTime: { home: number | null; away: number | null };
+    fullTime: FDScore;
+    /** Present when match went to extra time or penalties. */
+    extraTime?: FDScore;
+    /** Present when match went to a penalty shootout. */
+    penalties?: FDScore;
   };
 }
 
