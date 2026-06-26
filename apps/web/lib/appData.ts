@@ -1,6 +1,7 @@
 import {
   buildSnapshot,
   type BracketMatch,
+  type BracketParticipant,
   type GroupRanking,
   type Match,
   type RankedThird,
@@ -8,7 +9,7 @@ import {
 import { bracketTemplate, groupTeams, teams } from "@wc26/data";
 import { store } from "./store";
 import { thirdPlaceAllocation } from "./annexeC";
-import { computeClinched } from "./clinched";
+import { computeClinched, computeClinchedPositions } from "./clinched";
 import { computeMatchStakes, type MatchStake } from "./stakes";
 
 /** Everything the dashboard and admin need in one serializable payload. */
@@ -37,19 +38,24 @@ export async function getAppData(): Promise<AppData> {
   });
 
   const clinched = computeClinched(snapshot.groups);
+  const { clinchedFirst, clinchedSecond } = computeClinchedPositions(snapshot.groups);
 
-  // Clear the provisional flag on bracket slots whose team has clinched —
-  // their position is no longer tentative.
+  // Clear the provisional flag only when the team has clinched their specific
+  // bracket position, not just advancement. A team can clinch advancement while
+  // their 1st-vs-2nd order is still undecided (e.g. two teams level on points
+  // with a head-to-head match still to play).
+  const clearProvisional = (p: BracketParticipant): BracketParticipant => {
+    if (!p.teamId || !p.provisional) return p;
+    const positionLocked =
+      (p.source.kind === "groupWinner" && clinchedFirst.has(p.teamId)) ||
+      (p.source.kind === "groupRunnerUp" && clinchedSecond.has(p.teamId));
+    return positionLocked ? { ...p, provisional: false } : p;
+  };
+
   const bracket = snapshot.bracket.map((bm) => ({
     ...bm,
-    home:
-      bm.home.teamId && clinched.has(bm.home.teamId)
-        ? { ...bm.home, provisional: false }
-        : bm.home,
-    away:
-      bm.away.teamId && clinched.has(bm.away.teamId)
-        ? { ...bm.away, provisional: false }
-        : bm.away,
+    home: clearProvisional(bm.home),
+    away: clearProvisional(bm.away),
   }));
 
   const stakes = computeMatchStakes(
