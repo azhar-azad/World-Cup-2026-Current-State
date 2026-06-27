@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import type { BracketMatch, Match } from "@wc26/core";
 import { teamsById } from "@wc26/data";
 import type { MatchStake, TeamStake } from "@/lib/stakes";
@@ -54,7 +55,12 @@ function SideView({ side, align }: { side: Side; align: "left" | "right" }) {
   const content = side.teamId ? (
     <>
       <Flag teamId={side.teamId} size={18} />
-      <span className="truncate">{team?.name ?? side.teamId}</span>
+      <Link
+        href={`/team/${side.teamId}`}
+        className="truncate hover:text-white transition-colors"
+      >
+        {team?.name ?? side.teamId}
+      </Link>
     </>
   ) : (
     <span className="text-neutral-500 italic truncate">{side.label}</span>

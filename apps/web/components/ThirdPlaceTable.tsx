@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import type { RankedThird } from "@wc26/core";
 import { teamsById } from "@wc26/data";
 import { Flag } from "./TeamLabel";
@@ -44,9 +45,12 @@ export function ThirdPlaceTable({ rows }: { rows: RankedThird[] }) {
                 <td className="px-2 py-1.5">
                   <span className="inline-flex items-center gap-2">
                     <Flag teamId={r.teamId} size={16} />
-                    <span className="truncate">
+                    <Link
+                      href={`/team/${r.teamId}`}
+                      className="truncate hover:text-white transition-colors"
+                    >
                       {teamsById.get(r.teamId)?.name ?? r.teamId}
-                    </span>
+                    </Link>
                     {r.unresolvedTie && (
                       <span title="Level on on-pitch criteria — decided by FIFA ranking / lots" className="text-amber-400">
                         *

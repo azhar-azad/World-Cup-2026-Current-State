@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import type { GroupRanking } from "@wc26/core";
 import { teamsById } from "@wc26/data";
 import { Flag } from "./TeamLabel";
@@ -62,7 +63,12 @@ export function GroupTable({
                 <td className="px-2 py-1.5">
                   <span className="inline-flex items-center gap-2">
                     <Flag teamId={r.teamId} size={18} />
-                    <span className="truncate">{team?.name ?? r.teamId}</span>
+                    <Link
+                      href={`/team/${r.teamId}`}
+                      className="truncate hover:text-white transition-colors"
+                    >
+                      {team?.name ?? r.teamId}
+                    </Link>
                     {r.unresolvedTie && (
                       <span
                         title="Level on all on-pitch criteria — order decided by FIFA ranking / drawing of lots"

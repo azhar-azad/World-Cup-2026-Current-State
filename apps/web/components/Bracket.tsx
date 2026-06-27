@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import type { BracketMatch, BracketParticipant, Stage } from "@wc26/core";
 import { teamsById } from "@wc26/data";
 import { Flag } from "./TeamLabel";
@@ -34,8 +35,9 @@ function ParticipantRow({
         {p.teamId ? (
           <>
             <Flag teamId={p.teamId} size={16} />
-            <span
-              className={`truncate ${isWinner ? "font-semibold" : ""} ${
+            <Link
+              href={`/team/${p.teamId}`}
+              className={`truncate hover:text-white transition-colors ${isWinner ? "font-semibold" : ""} ${
                 p.provisional ? "italic text-neutral-400" : ""
               }`}
               title={
@@ -45,7 +47,7 @@ function ParticipantRow({
               }
             >
               {team?.name ?? p.teamId}
-            </span>
+            </Link>
             {p.provisional && (
               <span
                 className="h-1.5 w-1.5 rounded-full bg-amber-500/80 shrink-0"
