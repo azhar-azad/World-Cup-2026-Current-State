@@ -21,24 +21,10 @@ function rank(teamId: string): number {
   return FIFA_RANK[teamId] ?? 999;
 }
 
+// Knockout rounds only — never touch group-stage matches so real results are preserved.
+const STAGES: Stage[] = ["R32", "R16", "QF", "SF", "third", "final"];
+
 export async function POST() {
-  // Group stage: fill all scheduled matches that have known participants
-  const { matches } = await store.getState();
-  const pendingGroup = matches.filter(
-    (m) => m.stage === "group" && m.status === "scheduled" && m.homeTeam && m.awayTeam,
-  );
-
-  for (const m of pendingGroup) {
-    const homeWins = rank(m.homeTeam!) <= rank(m.awayTeam!);
-    await store.update(m.matchNo, {
-      status: "finished",
-      homeScore: homeWins ? 1 : 0,
-      awayScore: homeWins ? 0 : 1,
-    });
-  }
-
-  // Knockout rounds: rebuild bracket after each round so participants propagate
-  const STAGES: Stage[] = ["R32", "R16", "QF", "SF", "third", "final"];
   for (const stage of STAGES) {
     const data = await getAppData();
     const pending = data.bracket.filter(
