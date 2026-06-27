@@ -94,11 +94,26 @@ function BracketCard({ m }: { m: BracketMatch }) {
   );
 }
 
+// Display order derived from the bracket tree (depth-first, home before away at
+// each node) so that R32 pairs feeding the same R16 slot appear adjacent.
+const DISPLAY_ORDER: Partial<Record<Stage, number[]>> = {
+  R32: [74, 77, 73, 75, 83, 84, 81, 82, 76, 78, 79, 80, 86, 88, 85, 87],
+  R16: [89, 90, 93, 94, 91, 92, 95, 96],
+  QF:  [97, 98, 99, 100],
+  SF:  [101, 102],
+};
+
 export function Bracket({ bracket }: { bracket: BracketMatch[] }) {
-  const byStage = (stage: Stage) =>
-    bracket
+  const byStage = (stage: Stage) => {
+    const order = DISPLAY_ORDER[stage];
+    return bracket
       .filter((m) => m.stage === stage)
-      .sort((a, b) => a.matchNo - b.matchNo);
+      .sort((a, b) =>
+        order
+          ? order.indexOf(a.matchNo) - order.indexOf(b.matchNo)
+          : a.matchNo - b.matchNo,
+      );
+  };
   const thirdPlace = bracket.find((m) => m.stage === "third");
 
   return (
