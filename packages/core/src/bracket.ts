@@ -107,9 +107,9 @@ export function resolveBracket(input: ResolveBracketInput): BracketMatch[] {
           if (assigned) {
             const f = fromGroupPosition(rankings.get(assigned), 2, provisional);
             teamId = f.teamId;
-            // Third-place slot assignment is provisional unless it's the official
-            // (strict-mode) Annexe C allocation with all groups complete.
-            prov = provisional;
+            // Confirmed once all groups are complete (official Annexe C allocation);
+            // provisional during group stage.
+            prov = provisional && !allGroupsComplete;
           }
         }
         break;
